@@ -1,6 +1,6 @@
-def degree(x):
-    spis = [x * x * x for _ in range(1)]
+def degree(number):
+    spis = [number * number * number for _ in range(1)]
     print(spis[0])
 if __name__:
-    i = int(input("введите число "))
-    degree(i)
+    number_i = int(input("введите число "))
+    degree(number_i)
