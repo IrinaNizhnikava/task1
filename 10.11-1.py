@@ -1,3 +1,4 @@
+import math
 table = lambda i, n: i * n
 
 def factorial(a):
@@ -10,15 +11,16 @@ degree = lambda a, n: a ** n
 
 def module(a):
     if a < 0:
-        print(a * -1)
+        return a * -1
     else:
-        print(a)
+        return a
 
 def logarithm(x, base):
-    print(math.log(x, base))
+    return math.log(x, base)
+
 
 def percent(percente, number):
-    print(number * percente / 100)
+    return number * percente / 100
 
 if __name__:
     menu = input("Меню калькулятора :\n"
@@ -34,11 +36,11 @@ if __name__:
     elif menu == '2':
         print(degree(int(input("введите число ")), int(input("в степень "))))
     elif menu == '3':
-        module(int(input("введите число ")))
+        print(module(int(input("введите число "))))
     elif menu == '4':
-        logarithm(int(input("логарифм числа ")), int(input("по основанию ")))
+        print(logarithm(int(input("логарифм числа ")), int(input("по основанию "))))
     elif menu == '5':
-        percent(int(input("введите процент ")), int(input("от числа ")))
+        print(percent(int(input("введите процент ")), int(input("от числа "))))
     elif menu == '6':
         print(table(int(input("введите число ")), int(input("введите число "))))
     else:
