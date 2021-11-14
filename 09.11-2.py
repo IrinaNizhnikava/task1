@@ -1,25 +1,12 @@
 def minn(a, b, c):
-    if a < b:
-        if a < c:
-            print(a, " наименьшее число")
-        elif a > c:
-            print(c, " наименьшее число")
-        else:
-            print(a, " равно ", c)
-    elif a > b:
-        if b < c:
-            print(b, " наименьшее число")
-        elif b > c:
-            print(c, " наименьшее число")
-        else:
-            print(b, " равно ", c)
-    elif a == b:
-        if a > c:
-            print(c, " наименьшее число")
-        elif a < c:
-            print(a, " равно ", b, " и меньше ", c)
-        else:
-            print("числа равны")
+    if a <= b <= c:
+        print(a, " наименьшее число")
+    elif b <= c <= a:
+        print(b, " наименьшее число")
+    elif c <= a <= b:
+        print(c, " наименьшее число")
+    else:
+        print("числа равны")
 
 if __name__:
     spis = [input("Введите число: ") for _ in range(3)]
