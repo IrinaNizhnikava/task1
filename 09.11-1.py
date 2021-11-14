@@ -1,6 +1,5 @@
 def convector(x):
-    speed = x / 3.6
-    return speed
+    return x / 3.6
 
 if __name__:
     v = int(input("введите скорость км/ч "))
