@@ -14,7 +14,7 @@ class Horse:
         return f"{self.name} игого"
 
     def hop(self):
-        return f"{self.name} бегает"
+        return f"{self.name} скачет"
 
     def eat(self):
         return f"{self.name} кушает травку"
@@ -29,9 +29,7 @@ class Jockey:
         return f"{self.name}, {self.horse}"
 
     def ride(self):
-        def hop():
-            return "бегает"
-        return f"{self.horse} {hop()}"
+        return f"{self.horse.hop()}"
 
 if __name__:
     newHorse = Horse(input('окрас лошади '), input('порода лошади '), input('кличка лошади '), input('имя жокея '))
@@ -39,8 +37,5 @@ if __name__:
     newHorse1 = Horse(input('окрас '), input('порода '), input('кличка '), input('имя жокея '))
     print(newHorse1, "\n", newHorse1.nicker(), "\n", newHorse1.hop(), "\n", newHorse1.eat())
     print('всего лошадок ', Horse.total_number)
-
-    newJockey = Jockey(input('введите имя наездника '), input('введите кличку лошади '))
-    print(newJockey, "\n", newJockey.ride())
-    newJockey = Jockey(input('введите имя наездника '), input('введите кличку лошади '))
+    newJockey = Jockey(input('введите имя наездника '), newHorse)
     print(newJockey, "\n", newJockey.ride())
