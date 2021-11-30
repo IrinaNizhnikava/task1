@@ -9,8 +9,7 @@ print(card_number(input("введите номер кредитной карты
 #2. Напишите функцию, которая проверяет: является ли слово палиндромом
 
 def palindrome(stroka):
-    rev = stroka[::-1]
-    if stroka == rev:
+    if stroka == stroka[::-1]:
         return print(True, ", слово является палиндромом")
     return print(False, ", слово не является палиндромом")
 
