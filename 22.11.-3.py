@@ -16,7 +16,7 @@ class Tomato:
         if self._state == 3:
             return f"\n{True} томат достиг последней стадии созревания"
         elif self._state < 3:
-            return f"\nтомат еще не созрел"
+            return f"\n{False} томат еще не созрел"
         else:
             return False
 
@@ -30,8 +30,10 @@ class TomatoBush:
 
     def all_are_ripe(self):
         for tomato in self.tomatoes:
-            tomato.is_ripe()
-        return f"\n{True} все томаты созрели"
+            if tomato.is_ripe():
+                return f"\n{True} все томаты созрели"
+            else:
+                return f"\n{False} томаты не созрели"
 
     def give_away_all(self):
         for tomato in self.tomatoes:
@@ -44,8 +46,11 @@ class Gardener:
 
     def work(self):
         print(self.name, "работает")
-        self._plant.grow_all()
-        print("все созревает")
+        if _ in range(2):
+            self._plant.grow_all()
+            print("все созревает")
+        else:
+            print("все созрело")
 
     def harvest(self):
         if self._plant.all_are_ripe():
