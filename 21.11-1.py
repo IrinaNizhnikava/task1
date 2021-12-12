@@ -1,27 +1,24 @@
 class Tomato:
-    _state = {1: "зеленый", 2: "розовый", 3: "красный"}
+    states = {1: "зеленый", 2: "розовый", 3: "красный"}
     def __init__(self, newIndex):
-        self._index = newIndex
-
-    @property
-    def index(self):
-        return self._index
-
-    @index.setter
-    def index(self, newIndex):
+        self. _state = 1
         self._index = newIndex
 
     def grow(self):
-        if self._index in range(4):
-            return f"томат {Tomato._state[(int(self._index))]}"
+        print("томат ", Tomato.states[self._state])
+        if self._state < 3:
+            self._state += 1
+            return f"следующая стадия {Tomato.states[self._state]}"
+        else:
+            False
 
     def is_ripe(self):
-        if self._index == 3:
-            return f"\nтомат достиг последней стадии созревания"
-        elif 0 < self._index < 3:
+        if self._state == 3:
+            return f"\n{True} томат достиг последней стадии созревания"
+        elif self._state < 3:
             return f"\nтомат еще не созрел"
         else:
-            return f"\nтакой стадии созревания нет"
+            return False
 
     def __str__(self):
         return f"{self._index}, {Tomato._state}"
