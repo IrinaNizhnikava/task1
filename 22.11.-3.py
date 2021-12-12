@@ -29,11 +29,12 @@ class TomatoBush:
             tomato.grow()
 
     def all_are_ripe(self):
-        for tomato in self.tomatoes:
-            if tomato.is_ripe():
-                return f"\n{True} все томаты созрели"
-            else:
-                return f"\n{False} томаты не созрели"
+        return all([tomato.is_ripe() for tomato in self.tomatoes])
+        # for tomato in self.tomatoes:
+        #         if tomato.is_ripe():
+        #             return f"\n{True} все томаты созрели"
+        #         else:
+        #             return f"\n{False} томаты не созрели"
 
     def give_away_all(self):
         for tomato in self.tomatoes:
